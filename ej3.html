@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejecricio 3</title>
+    <link rel="stylesheet"  href="CSS/estiloEj3.css" />
+</head>
+<body>
+    <h1> Ejercicio 3</h1>
+    <p>
+        Ej. 3 : Supongamos que los días de la semana se codifican como 1 = Domingo, 2 = Lunes y así 
+sucesivamente. Realiza un algoritmo donde dado el número del día de la semana, retorne: "Es fin de 
+semana" si el día corresponde a "Sábado" o "Domingo", y "Es día de Clases" en caso contrario.
+    </p>
+    <p>
+        <script src="js/ejercicio3.js"> </script>
+    </p>
+    <p>
+        <script type="text/javascript">
+          document.write("<h2>ES DIA DE... </h2>")
+          var dias = [
+            { numero: 1, dia: 'Domingo' },
+            { numero: 2, dia: 'Lunes' },
+            { numero: 3, dia: 'Martes' },
+            { numero: 4, dia: 'Miércoles' },
+            { numero: 5, dia: 'Jueves' },
+            { numero: 6, dia: 'Viernes' },
+            { numero: 7, dia: 'Sábado' }
+          ];
+      
+          var numIngresado = parseInt(prompt('Ingrese un número del 1 al 7 para representar un día de la semana:'));
+      
+          function obtenerDia(dias, numIngresado) {
+            var encontrado = false;
+      
+            for (var i = 0; i < dias.length; i++) {
+              if (numIngresado === dias[i].numero) {
+                encontrado = true;
+                break;
+              }
+            }
+      
+            if (encontrado) {
+              if (numIngresado === 1 || numIngresado === 7) {
+                return 'Es fin de semana';
+              } else {
+                return 'Es día de clases';
+              }
+            } else {
+              return 'El número ingresado no corresponde a ningún día de la semana';
+            }
+          }
+      
+          document.write("<p>" + obtenerDia(dias, numIngresado) + "</p>")
+        </script>
+      </p>
+      
+        </p>
+</body>
+</html>
