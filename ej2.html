@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+    <link rel="stylesheet"  href="CSS/estiloEj2.css" />
+</head>
+<body>
+    <section id="content">
+        <h1>Ejercicio 2</h1>
+        <p>
+            Ej. 2 : El argumento "palabras" es un arreglo de strings. Mostrar un string donde todas las palabras estén 
+                concatenadas con un espacio entre cada palabra. Ejemplo: ['Hola', 'mundo'] -> ‘Hola Mundo!'.
+                <ul>
+                    <li>a. Utilice push() y concat() y describas sus observaciones.</li>
+                </ul>
+        </p>
+        <p>
+        <script src="js/ejercicio2.js"> </script>
+        </p>
+        <p>
+            <script type="text/javascript"> 
+            document.write("<h2>a. Utilice push() y concat() y describas sus observaciones.</h2>")
+            function addPalabras(palabras){
+                var nuevoArray=[];
+                for(var i=0; i<palabras.length;i++){
+                    nuevoArray.push(palabras[i]);
+                }
+                var resultadoConcatenado=nuevoArray.join(' ');
+                return resultadoConcatenado
+
+            }
+            var palabras=['Hola', 'mundo' ,',', 'estoy' ,'programando','para','el','proyecto','final','de ','taller','de','programacion'];
+            mostrar=addPalabras(palabras);
+            console.log(mostrar);
+            document.write(mostrar);
+
+            document.write("<h2>La descripcion que puedo observar: </h2>")
+            document.write("<p>Lo que puedo observar es que debo utilizar el metodo join para poder concatenar los elementos de un array en una cadena de texto, utilizando un separador especificado </p>")
+            </script>
+        
+        </p>
+
+
+    </section>
+    
+</body>
+</html>
