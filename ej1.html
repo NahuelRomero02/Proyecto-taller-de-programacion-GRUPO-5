@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+    <link rel="stylesheet"  href="CSS/estilo.css" />
+</head>
+<body>
+    <section id="content">
+        <h1>Ejercicio 1</h1>
+            <p>Ej. 1 :	Se declara un vector de capacidad que representan los valores de temperatura promedio 
+                diaria <strong>tempEnero[]</strong> registrada en la ciudad de Salta durante el mes de enero.</br>
+            <ul>
+                <li>a.	Mostrar el primer elemento del arreglo.</li>
+                <li>b.	Mostrar el último elemento del arreglo.</li>
+                <li>c.	Mostrar la longitud del arreglo recibido por parámetro.</li>
+                <li>d.	Mostrar un arreglo diasCalidos[] cuyos elementos son los días en los cuales las temperaturas estuvieron por encima del promedio mensual.</li>
+                <li>e.	Agrega el "promedio" al final del arreglo tempEnero[].</li>
+                <li>f.	Agrega el "promedio" al principio del arreglo diasCalidos[].</li>
+            </ul>
+            </p>
+        <p>
+            <script src="js/ejercicio1.js"> </script>
+        </p>
+        <p>
+            <script type="text/javascript"> 
+                var tempEnero = [25.3, 26.1, 24.8, 25.6, 27.2, 28.4,
+                                    29.1, 28.6, 27.9, 26.7, 25.4, 24.9, 26.3, 27.5, 28.9, 
+                                    29.7, 28.2, 26.8, 25.7, 24.5, 25.8, 27.3, 28.1, 28.7, 
+                                    29.2, 29.8, 29.6, 28.3, 27.1, 26.4, 25.9, 26.5];
+                //mostramos el primer valor del arreglo
+                document.write("<h2>a. Mostramos el primer valor del array</h2>");
+                var primerValor=tempEnero[0];
+                document.write("<p>El primer valor del vector es " + primerValor + "</p>"); 
+                // mostramos el ultimo valor del arreglo
+                document.write("<h2>b. Mostramos el ultimo valor del array</h2>");
+                var ultimoValor=tempEnero[tempEnero.length -1];
+                document.write("<p>El ultimo valor del array es " + ultimoValor + "</p>")  
+                // mostramos la longitud del arreglo
+                document.write("<h2>c. Mostrar la longitud del arreglo recibido por parámetro.</h2>")
+                function mostrarLongitud(tempEnero){
+                        console.log('La longiutd del array es: ' + tempEnero.length)
+                    }
+                    mostrarLongitud(tempEnero)
+                document.write("<p>La longitud del array es " + tempEnero.length + " </p>")
+                        // agregamos a un nuevo arrary y Mostramos los dias calidos
+                document.write("<h2>d. Mostrar un arreglo diasCalidos[] cuyos elementos son los días en los cuales las temperaturas estuvieron por encima del promedio mensual.</h2>")
+                var diasCalidos=[];
+                function obtenerDiasCalidos(tempEnero,resultado){
+                    
+                    for(var i = 0;i<tempEnero.length;i++){
+                        if(tempEnero[i]>resultado){ 
+                            diasCalidos.push(tempEnero[i]);
+                        }
+                    }
+                    return diasCalidos;
+                }
+                var diasCal = obtenerDiasCalidos(tempEnero,resultado);
+                console.log(diasCalidos);
+                document.write("<p>Los dias calidos son " + diasCal + " </p>")
+
+                //Mostramos el promedio del array de las temEnero
+                document.write("<h2>e. Mostramos el promedio de tempEnero. </h2>")
+                function sumarArray(tempEnero){
+                        sum=0
+                        for(var i=0; i<tempEnero.length;i++){
+                            sum+=tempEnero[i];
+                        }
+                        return sum
+                    }
+                    total=sumarArray(tempEnero);
+                    resultado=total/tempEnero.length;
+                    console.log('El promedio del array es: ' + resultado);
+                    
+                    document.write("<p>El promedio de las temperaturas de enero es " + resultado + " </p>")
+
+                //Mostramos el promedio del array tempCalidas
+                document.write("<h2>f. Mostramos el promedio del arreglo diasCalidos[] </h2>")
+                function promedioCal(diasCal){
+                    sum=0
+                    for(var i=0;i<diasCal.length;i++){
+                        sum+=diasCal[i];
+                    }
+                    return sum;
+                }
+                r=promedioCal(diasCal);
+                r1=r/diasCal.length;
+                document.write("<p>El promedio de las temperaturas de los dias calidos es " + r1 + " </p>")
+            </script>
+        </p>
+    </section>
+    
+</body>
+</html>
