@@ -1,0 +1,26 @@
+::content{
+    background-color: #ff9a9a;
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+}
+body {
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffe5e5;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  }
+
+#container{
+    background-color: #957c7c;
+  margin: 20px auto;
+  max-width: 800px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
