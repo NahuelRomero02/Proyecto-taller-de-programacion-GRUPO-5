@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 6</title>
+    <link rel="stylesheet"  href="CSS/estiloEj6.css" />
+</head>
+<body>
+    <h1>EJERCICIO 6</h1>
+    <p>Ej. 6 : Cargar en un array, una lista de cantidad desconocida con códigos no nulos (el último código de la 
+        lista de cero), correspondientes a artículos de comercio. Luego buscar un código (COD) requerido por 
+        el usuario y mostrar la posición de la primera carga en el vector. En caso de no encontrarlo, mostrar 
+        “Código no cargado”. </p>
+    <p id="output"></p>
+
+    <script type="text/javascript"> 
+        let lista = [823, 213, 532, 552, 934, 111, 555, 9892];
+        var numIngresado = parseInt(prompt('Ingrese el código: '));
+
+        function encontrarCodigo(lista, numIngresado) {
+            for (var i = 0; i < lista.length; i++) {
+                if (lista[i] === numIngresado) {
+                    document.getElementById('output').textContent = 'El valor ingresado está en la posición: ' + (i + 1);
+                    return;
+                }
+            }
+            document.getElementById('output').textContent = 'El código no existe';
+        }
+
+        encontrarCodigo(lista, numIngresado);
+    </script>
+    
+</body>
+</html>
