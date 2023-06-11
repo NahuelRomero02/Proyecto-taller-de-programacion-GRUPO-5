@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5</title>
+    <link rel="stylesheet"  href="CSS/estiloEj5.css" />
+</head>
+<body>
+    <section id="content">
+        <h1>EJERCICIO 5</h1>
+        <p id="parrafo">Ej. 5 : Declarar un array con los integrantes del grupo y sus notas registradas en la materia. Por ejemplo: 
+             grupoTP = [‘Juan Perez’, 8, ‘Samuel Lopez’, 7.80, ‘Maria Gonzalez’, 5.34, ‘Analía Tolaba’, 3.25].
+            
+            </p>
+            <ul>
+
+                <li >a. Itera (en un bucle) los elementos del arreglo y devuelve el promedio de las notas.</li>
+                <br>
+                <li>b. Muestra la nota más alta y la más baja.</li>
+            </ul>
+                            <script src="js/ejercicio1.js"> </script>
+    <script>
+            document.write('<h2>PROMEDIO DE LAS NOTAS: </h2>')
+            const grupoTP=['Romero Nahuel',9,'Quiroz Alvaro',9.25,'Copa Pablo',9.5,'Antonello Octavio',8.75];
+            document.write('<ul>Lista alumnos</ul>')
+            document.write('<br>')
+            document.write('<li>Romero Nahuel : 9 </li>')
+            document.write('<br>')
+            document.write('<li>Quiroz Alvaro : 9.25 </li>')
+            document.write('<br>')
+            document.write('<li>Copa Pablo : 9.5 </li>')
+            document.write('<br>')
+            document.write('<li>Antonello Octavio : 8.75 </li>')
+                function iterarElementos(notas){
+                    let sum=0;
+                    let cantidadNotas=0;
+                    for(var i=1;i<notas.length;i+=2){
+                        sum+=notas[i];
+                        cantidadNotas++;
+                    } 
+                    let promedio=sum/cantidadNotas;
+                    return promedio;
+                }
+            let promedioNotas=iterarElementos(grupoTP)
+            document.write('<br>')
+            document.write('<p>El promedio de notas es: ' + promedioNotas +'</p>');
+
+            document.write('<h2>LA NOTMA MAS ALTA</h2>')
+            function mostrarNotas(notas){
+                let notaMayor=0;
+                let notaMenor=Infinity;
+                for(var i=1;i<notas.length;i+=2){
+                    if(notaMayor<notas[i]){
+                        notaMayor=notas[i];
+
+                    } if(notas[i]<notaMenor){
+                        notaMenor=notas[i];
+                    }
+
+                }
+                return{
+                    menor: notaMenor,
+                    mayor: notaMayor
+                }
+            }
+            const nota=mostrarNotas(grupoTP);
+
+            document.write('<p>la nota mayor es: ' + nota.mayor+'</p>');
+            document.write('<h2>LA NOTA MAS BAJA</h2>')
+            document.write('<p>la nota menor es: ' + nota.menor+'</p>');
+            
+    </script>
+         
+        </section>
+    </body>
+</html>
